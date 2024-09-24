@@ -3,8 +3,8 @@ import {
 	Text,
 	ScrollView,
 	View,
-	TextInput,
-	ToastAndroid
+	TextInput
+	//ToastAndroid
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { AntDesign } from "@expo/vector-icons";
@@ -42,14 +42,14 @@ const Editor = observer(() => {
 			await AsyncStorage.setItem("tasks", JSON.stringify(tasks));
 
 			if (selectedTask.id) {
-				ToastAndroid.show("Task updated", ToastAndroid.SHORT);
+				//ToastAndroid.show("Task updated", ToastAndroid.SHORT);
 				state.selectedTask.set(newTask);
 			} else {
-				ToastAndroid.show("Task added", ToastAndroid.SHORT);
+				//ToastAndroid.show("Task added", ToastAndroid.SHORT);
 			}
 		} catch (error) {
 			console.log(error, "writing error");
-			ToastAndroid.show("Error saving task", ToastAndroid.SHORT);
+			//ToastAndroid.show("Error saving task", ToastAndroid.SHORT);
 		}
 	};
 
